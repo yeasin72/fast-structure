@@ -1,0 +1,32 @@
+{
+  "name": "fast-structure",
+  "version": "1.0.18",
+  "description": "To create my project structure as fast as possible. every package have so manny dummy staf that little annoying to delete those staff that's for creating this app to create everything automatically.",
+  "main": "main.js",
+  "bin": {
+    "fstructure": "fstructure"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ver": "node --version && npm --version",
+    "react": "cd prototype && npx create-react-app ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeasin72/fast-structure.git"
+  },
+  "keywords": [
+    "cli-tool",
+    "React",
+    "Next"
+  ],
+  "author": "Yeasin Arafath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeasin72/fast-structure/issues"
+  },
+  "homepage": "https://github.com/yeasin72/fast-structure#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
