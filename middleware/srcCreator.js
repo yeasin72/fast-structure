@@ -15,13 +15,13 @@ function srcSetup(projectName, projectFolder, assetsPath) {
 
     // src directory and index.js file
     fs.mkdirSync(srcDirectory)
-    fs.writeFileSync(`${process.cwd()}/${projectName}/src/index.js`, indexJs)
+    fs.writeFileSync(`${projectFolder}/src/index.js`, indexJs)
 
     // app directory and App.js file
     const appDirectory = srcDirectory+'/app'
     const appJs = require('../files/app').appSetup(projectName)
     fs.mkdirSync(appDirectory)
-    fs.writeFileSync(`${process.cwd()}/${projectName}/src/app/App.js`, appJs)
+    fs.writeFileSync(`${projectFolder}/src/app/App.js`, appJs)
 
     // Components directory inside src directory
     const componetsDir = srcDirectory+'/Components'

@@ -9,14 +9,16 @@ const fs = require('fs');
  * @param {string} assetsPath - To get asset file path.
  * @returns {void} 
  */
-function initialSetup(projectName, projectFolder, assetsPath) {
+function initialSetup(projectName, projectFolder, assetsPath, makeable) {
     const jsonFile = require('../files/json').generateJSON(projectName)
-    fs.mkdirSync(projectFolder)
-    fs.writeFileSync(`${process.cwd()}/${projectName}/package.json`, jsonFile)
+    if (makeable) {
+        fs.mkdirSync(projectFolder)
+    }
+    fs.writeFileSync(`${projectFolder}/package.json`, jsonFile)
     
     // Gitignore file
     const gitSrc = require('../files/git').gitSetup()
-    fs.writeFileSync(`${process.cwd()}/${projectName}/.gitignore`, gitSrc)
+    fs.writeFileSync(`${projectFolder}/.gitignore`, gitSrc)
 }
 
 exports.initialSetup = initialSetup
