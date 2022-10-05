@@ -1,10 +1,10 @@
 on:
-pull_request:
-    branches:
-      - main
-push:
-    branches:
-      - main
+    pull_request:
+        branches:
+            - main
+    push:
+        branches:
+            - main
       
 name: "🚀 Release"
 # action not working
@@ -20,9 +20,10 @@ jobs:
               with:
                   node-version: 16
                   registry-url: https://registry.npmjs.org
+            - name: dir Check
+              run: dir
             - name: 🚀 publish
               run: npm publish --access public
-              run: dir
               working-directory: fast-structure
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}} 
