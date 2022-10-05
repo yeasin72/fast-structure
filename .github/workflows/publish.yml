@@ -7,24 +7,19 @@ on:
             - main
       
 name: "🚀 Release"
-# action not working
 jobs:
-    release:
-        name: 🚀 Release
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout
-              uses: actions/checkout@v3.1.0
-            - name: node
-              uses: actions/setup-node@v3.5.0
-              with:
-                  node-version: 16
-                  registry-url: https://registry.npmjs.org
-            - name: 🚀 publish
-              run: |
-                    dir
-                    ls -a
-                    npm publish --access public
-              working-directory: fast-structure
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}} 
+  publish:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Setup Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        check-latest: true
+        registry-url: https://registry.npmjs.org/
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: Publish Package to NPM Registry
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}} 
