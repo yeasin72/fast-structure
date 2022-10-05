@@ -1,6 +1,6 @@
 {
   "name": "fast-structure",
-  "version": "1.1.1",
+  "version": "1.1.5",
   "description": "To create my project structure as fast as possible. every package have so manny dummy staf that little annoying to delete those staff that's for creating this app to create everything automatically.",
   "main": "main.js",
   "bin": {
