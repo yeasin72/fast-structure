@@ -1,0 +1,26 @@
+on:
+    pull_request:
+        branches:
+            - main
+    push:
+        branches:
+            - main
+      
+name: "🚀 Release"
+jobs:
+  publish:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Setup Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        check-latest: true
+        registry-url: https://registry.npmjs.org/
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: Publish Package to NPM Registry
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}} 
+
