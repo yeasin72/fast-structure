@@ -66,5 +66,5 @@ function structure() {
         console.log('fstructure: '+ colors.red("ERR! ") + `your option "${option}" not valid. for any help run "fstructure --help"`);
     }
 }
-// structure()
-exports.structure = structure
+structure()
+// exports.structure = structure

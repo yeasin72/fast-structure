@@ -26,8 +26,8 @@ function srcSetup(projectName, projectFolder, assetsPath) {
     fs.writeFileSync(`${projectFolder}/src/app/app.css`, appCss)
 
     // common directory inside src directory
-    const componetsDir = srcDirectory+'/common'
-    fs.mkdirSync(componetsDir)
+    const componetsDir = srcDirectory
+    fs.mkdirSync(componetsDir+'/common')
     // component and hooks directory inside common
     fs.mkdirSync(componetsDir+'/common/components')
     fs.mkdirSync(componetsDir+'/common/tests')
