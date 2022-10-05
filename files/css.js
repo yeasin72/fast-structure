@@ -1,0 +1,42 @@
+function cssSetup() {
+    const css = `*{
+        margin: 0;
+        padding: 0;
+    }
+    :root{
+        --background-color: #000000;
+        --content-background-color: #1d2226;
+        --border-color: hsla(0,0%,100%,0.12);
+        --error-color: #cc0f16;
+        --success-color: #3fc786;
+        --primary-color: #70b6f9;
+        --text-color:#a1a3a5;
+        --heading-color:#e9e9ea;
+    }
+    body{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 17px;
+    }
+    .container{
+        width: 1280px;
+        height: auto;
+        margin: 0 auto;
+    }
+    h2, h3, h4, h5, h6, h1{
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+        color: var(--primary-color);
+    }
+    ul, li{
+        list-style: none;
+    }
+    div{
+        box-sizing: border-box;
+    }`
+    return css;
+}
+
+exports.cssSetup = cssSetup
