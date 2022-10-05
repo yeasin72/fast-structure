@@ -9,10 +9,11 @@ function appSetup(projecName) {
 // Implementation
 // import './App.css';
     const app = `import React from "react"
+import './app.css'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <h2>${projecName} Application</h2>
     </div>
   );
